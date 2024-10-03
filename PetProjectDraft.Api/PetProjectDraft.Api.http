@@ -1,0 +1,6 @@
+@PetProjectDraft.Api_HostAddress = http://localhost:5064
+
+GET {{PetProjectDraft.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
