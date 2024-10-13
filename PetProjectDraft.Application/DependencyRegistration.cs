@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using PetProjectDraft.Application.Features.Users.Login;
+using PetProjectDraft.Application.Features.Users.Register;
 using PetProjectDraft.Application.Features.VolunteerApplications.ApplyVolunteerApplication;
 using PetProjectDraft.Application.Features.VolunteerApplications.ApproveVolunteerApplication;
 using PetProjectDraft.Application.Features.Volunteers.PublishPet;
@@ -32,8 +34,8 @@ namespace PetProjectDraft.Application
             services.AddScoped<ApplyVolunteerApplicationHandler>();
             services.AddScoped<ApproveVolunteerApplicationHandler>();
 
-         //   services.AddScoped<LoginHandler>();
-         //   services.AddScoped<RegisterHandler>();
+            services.AddScoped<LoginHandler>();
+            services.AddScoped<RegisterHandler>();
 
             return services;
         }

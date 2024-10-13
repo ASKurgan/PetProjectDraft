@@ -7,6 +7,7 @@ using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using PetProjectDraft.Api.Extensions;
+using PetProjectDraft.Infrastructure.DbContexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,13 @@ builder.Services.AddApplication();
 builder.Services.AddApi();
 
 var app = builder.Build();
+
+
+var scope = app.Services.CreateScope();
+
+var dbContext = scope.ServiceProvider.GetRequiredService<PetProjectWriteDbContext>();
+
+await dbContext.Database.MigrateAsync();
 
 // Configure the HTTP request pipeline.
 

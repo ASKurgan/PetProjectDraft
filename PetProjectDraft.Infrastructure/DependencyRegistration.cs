@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Minio;
 using PetProjectDraft.Application.DataAccess;
@@ -38,7 +39,17 @@ namespace PetProjectDraft.Infrastructure
                                                               IConfiguration configuration)
         {
             services.AddScoped<ITransaction, Transaction>();
-            services.AddScoped<PetProjectWriteDbContext>();
+
+            var connectionString = configuration.GetConnectionString("PetProject");
+            
+            //services.AddDbContext<PetProjectWriteDbContext>(options =>
+            //{
+            //    options.UseSqlServer(connectionString,
+            //          b => b.MigrationsAssembly("PetProjectDraft.Infrastructure"));
+            //});
+
+
+             services.AddScoped<PetProjectWriteDbContext>();
 
             services.AddMinio(options =>
             {

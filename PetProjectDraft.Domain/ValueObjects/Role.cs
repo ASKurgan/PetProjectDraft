@@ -46,8 +46,8 @@ namespace PetProjectDraft.Domain.ValueObjects
             Permissions = permissions;
         }
 
-        public string Name { get; }
-        public string[] Permissions { get; }
+        public string Name { get; private set; }
+        public string[] Permissions { get; private set; }
 
         protected override IEnumerable<object> GetEqualityComponents()
         {

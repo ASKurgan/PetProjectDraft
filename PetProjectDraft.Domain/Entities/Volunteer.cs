@@ -14,8 +14,7 @@ namespace PetProjectDraft.Domain.Entities
         public const int PHOTO_COUNT_LIMIT = 5;
 
         private Volunteer()
-        {
-        }
+        {}
 
         public Volunteer(
             Guid id,

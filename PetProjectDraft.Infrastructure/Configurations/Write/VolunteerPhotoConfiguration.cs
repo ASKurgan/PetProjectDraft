@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace PetProjectDraft.Infrastructure.Configurations.Write
 {
-    public class VolunteerPhotoConfiguration : IEntityTypeConfiguration<VolunteerPhoto>
+    public class VolunteerPhotoConfiguration // : IEntityTypeConfiguration<VolunteerPhoto>
     {
-        public void Configure(EntityTypeBuilder<VolunteerPhoto> builder)
-        {
-            builder.ToTable("volunteer_photos");
-            builder.HasKey(p => p.Id);
-        }
+        //public void Configure(EntityTypeBuilder<VolunteerPhoto> builder)
+        //{
+        //    builder.ToTable("volunteer_photos");
+        //    builder.HasKey(p => p.Id);
+        //}
     }
 }

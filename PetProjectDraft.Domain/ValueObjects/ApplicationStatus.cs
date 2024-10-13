@@ -15,7 +15,7 @@ namespace PetProjectDraft.Domain.ValueObjects
 
         private static readonly ApplicationStatus[] _all = [Denied, Consideration, Approved];
 
-        public string Status { get; }
+        public string Status { get; private set; }
 
         private ApplicationStatus(string status)
         {

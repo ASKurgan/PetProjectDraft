@@ -15,10 +15,11 @@ namespace PetProjectDraft.Infrastructure.DbContexts
     {
         private readonly IConfiguration _configuration;
 
-
-        public PetProjectWriteDbContext(IConfiguration configuration)
+     
+        public PetProjectWriteDbContext( IConfiguration configuration)
         {
             _configuration = configuration;
+           
         }
 
 
